@@ -72,16 +72,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)thirdparty\glew-2.1.0\include;$(ProjectDir)thirdparty\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)thirdparty\glew-2.1.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)thirdparty\imgui;$(ProjectDir)thirdparty\glew-2.1.0\include;$(ProjectDir)thirdparty\glfw\include;$(ProjectDir)thirdparty\glm;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)thirdparty\glew-2.1.0\lib\Release\Win32;$(ProjectDir)thirdparty\glfw\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)thirdparty\glew-2.1.0\include;$(ProjectDir)thirdparty\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)thirdparty\glew-2.1.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)thirdparty\imgui;$(ProjectDir)thirdparty\glew-2.1.0\include;$(ProjectDir)thirdparty\glfw\include;$(ProjectDir)thirdparty\glm;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)thirdparty\glew-2.1.0\lib\Release\Win32;$(ProjectDir)thirdparty\glfw\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -97,7 +97,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -127,7 +127,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -147,7 +147,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Application.cpp" />
+    <ClCompile Include="Src\Cube.cpp" />
+    <ClCompile Include="Src\imgui\imgui.cpp" />
+    <ClCompile Include="Src\imgui\imgui_demo.cpp" />
+    <ClCompile Include="Src\imgui\imgui_draw.cpp" />
+    <ClCompile Include="Src\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="Src\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Src\imgui\imgui_tables.cpp" />
+    <ClCompile Include="Src\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Src\Main.cpp" />
+    <ClCompile Include="Src\Model.cpp" />
+    <ClCompile Include="Src\Triangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Application.hpp" />
+    <ClInclude Include="Include\Constants.hpp" />
+    <ClInclude Include="Include\Cube.hpp" />
+    <ClInclude Include="Include\Model.hpp" />
+    <ClInclude Include="Include\Triangle.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
