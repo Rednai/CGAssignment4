@@ -73,7 +73,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(ProjectDir)thirdparty\imgui;$(ProjectDir)thirdparty\glew-2.1.0\include;$(ProjectDir)thirdparty\glfw\include;$(ProjectDir)thirdparty\glm;$(ProjectDir)include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)thirdparty\glew-2.1.0\lib\Release\x64;$(ProjectDir)thirdparty\glfw\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)thirdparty\glew-2.1.0\lib;$(ProjectDir)thirdparty\glfw\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -81,7 +81,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(ProjectDir)thirdparty\imgui;$(ProjectDir)thirdparty\glew-2.1.0\include;$(ProjectDir)thirdparty\glfw\include;$(ProjectDir)thirdparty\glm;$(ProjectDir)include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)thirdparty\glew-2.1.0\lib\Release\x64;$(ProjectDir)thirdparty\glfw\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)thirdparty\glew-2.1.0\lib;$(ProjectDir)thirdparty\glfw\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
