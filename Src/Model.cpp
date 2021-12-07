@@ -12,11 +12,16 @@
 
 Model::~Model()
 {
+	// When the model is destroyed, we free all the allocated buffers
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteProgram(shaderProgram);
 }
 
+/// <summary>
+/// Initialize the model
+/// </summary>
+/// <returns>Return true if the model has initialized correctly. Return false otherwise.</returns>
 bool Model::Init()
 {
 	int success;
@@ -24,7 +29,7 @@ bool Model::Init()
 	const char* vertexShaderSource = this->vertexShaderSource.c_str();
 	const char* fragmentShaderSource = this->fragmentShaderSource.c_str();
 
-	// We create and compile a shader for the vertices of the triangle
+	// We create and compile a shader for the vertices of the triangles
 	vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader, 1, &vertexShaderSource, nullptr);
 	glCompileShader(vertexShader);
@@ -36,7 +41,7 @@ bool Model::Init()
 		return false;
 	}
 
-	// We create and compile a fragment shader for the color of the triangle
+	// We create and compile a fragment shader for the colors of the triangles
 	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
 	glCompileShader(fragmentShader);
@@ -48,6 +53,7 @@ bool Model::Init()
 		return false;
 	}
 
+	// We combine the vertex and the fragment shader in a program shader
 	shaderProgram = glCreateProgram();
 	glAttachShader(shaderProgram, vertexShader);
 	glAttachShader(shaderProgram, fragmentShader);
@@ -60,10 +66,11 @@ bool Model::Init()
 		return false;
 	}
 
+	// We delete the vertex and the fragment shader because we don't need them anymore
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
-	// We create the vertices array for the triangle
+	// We create a vertices array for the triangles of the model
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
 
@@ -81,9 +88,14 @@ bool Model::Init()
 	return true;
 }
 
+/// <summary>
+/// Draw the model
+/// </summary>
 void Model::Draw()
 {
+	// We use the model shader and vertices
 	glUseProgram(shaderProgram);
 	glBindVertexArray(VAO);
+	// We draw the model triangles
 	glDrawArrays(GL_TRIANGLES, 0, triangleCount * 3);
 }
