@@ -1,3 +1,10 @@
+/*
+ * @Author: BOICHARD Hugo 
+ * @Date: 2021-12-07 17:30:27 
+ * @Last Modified by:   Boichard Hugo 
+ * @Last Modified time: 2021-12-07 17:30:27 
+ */
+
 #include <GL/glew.h>
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
@@ -71,7 +78,7 @@ bool Cube::Init()
 
 	glUseProgram(shaderProgram);
 
-	// Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
+	// Projection matrix : 45ï¿½ Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
 	glm::mat4 Projection = glm::perspective(glm::radians(45.0f), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100.0f);
 
 	// Camera matrix

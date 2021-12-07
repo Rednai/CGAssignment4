@@ -1,3 +1,10 @@
+/*
+ * @Author: BOICHARD Hugo 
+ * @Date: 2021-12-07 17:30:32 
+ * @Last Modified by:   Boichard Hugo 
+ * @Last Modified time: 2021-12-07 17:30:32 
+ */
+
 #include "Application.hpp"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"

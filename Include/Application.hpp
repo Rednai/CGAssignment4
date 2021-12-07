@@ -1,3 +1,10 @@
+/*
+ * @Author: BOICHARD Hugo 
+ * @Date: 2021-12-07 17:30:47 
+ * @Last Modified by:   Boichard Hugo 
+ * @Last Modified time: 2021-12-07 17:30:47 
+ */
+
 #pragma once
 
 #define GLEW_STATIC
